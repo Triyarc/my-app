@@ -1,0 +1,5 @@
+css media query
+
+	@media (min-width: ${({ theme }) => theme.tablet}) {
+		color: red;
+	} 
