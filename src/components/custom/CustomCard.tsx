@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { CustomCard, CardDetails } from '../style/ComponentStyle/CustomCard';
+import { CustomCardComponent, CardDetails } from '../style/ComponentStyle/CustomCard.styled';
 import { StoreItemProps } from '../../DataTypes';
 import { useNavigate } from 'react-router-dom';
 
-const StoreItem: React.FC<StoreItemProps> = ({ data }) => {
+const CustomCard: React.FC<StoreItemProps> = ({ data }) => {
   const camelCase = (data: { pet: string }) => {
     let pet_variety = data.pet[0].toUpperCase();
     let pet_variety_rest = data.pet.slice(1).split('');
@@ -19,7 +19,7 @@ const StoreItem: React.FC<StoreItemProps> = ({ data }) => {
   };
 
   return (
-    <CustomCard>
+    <CustomCardComponent>
       <div
         className='card text-decoration-none '
         onClick={() => handleNavigate(data.id)} style={{cursor: "pointer"}}
@@ -49,8 +49,8 @@ const StoreItem: React.FC<StoreItemProps> = ({ data }) => {
           </CardDetails>
         </Card.Body>
       </div>
-    </CustomCard>
+    </CustomCardComponent>
   );
 };
 
-export default StoreItem;
+export default CustomCard;

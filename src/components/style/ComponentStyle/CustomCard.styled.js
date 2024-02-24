@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CustomCard = styled.div`
+export const CustomCardComponent = styled.div`
   a {
     border: 1px solid ${({ theme }) => theme.color.border_Color};
   }

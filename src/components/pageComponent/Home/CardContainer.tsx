@@ -1,17 +1,17 @@
-import React from 'react';
-import { BsArrowRight } from 'react-icons/bs';
-import { Post } from '../../../data/post';
-import CustomCard from '../../custom/CustomCard';
-import { Col, Row } from 'react-bootstrap';
-import { MainCardContainer } from '../../style/ComponentStyle/CardContainer';
-import { productCategory } from '../../../data/product';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { BsArrowRight } from "react-icons/bs";
+import { Post } from "../../../data/post";
+import CustomCard from "../../custom/CustomCard";
+import { Col, Row } from "react-bootstrap";
+import { MainCardContainer } from "../../style/ComponentStyle/CardContainer.styled";
+import { productCategory } from "../../../data/product";
+import { useNavigate } from "react-router-dom";
 
 interface CardContainerProps {}
 
 const CardContainer: React.FC<CardContainerProps> = () => {
-  let mate = Post.filter((el: any) => el.category === 'mating');
-  let adopt = Post.filter((el: any) => el.category === 'adoption');
+  let mate = Post.filter((el: any) => el.category === "mating");
+  let adopt = Post.filter((el: any) => el.category === "adoption");
 
   const navigate = useNavigate();
 
@@ -19,10 +19,10 @@ const CardContainer: React.FC<CardContainerProps> = () => {
   let limitedIterations = 6;
 
   const handleProductCategory = (props: string) => {
-    if (props === 'Mating') {
-      navigate('/pets/mating');
-    } else if (props === 'Adoption') {
-      navigate('/pets/adoption');
+    if (props === "Mating") {
+      navigate("/pets/mating");
+    } else if (props === "Adoption") {
+      navigate("/pets/adoption");
     }
   };
 
